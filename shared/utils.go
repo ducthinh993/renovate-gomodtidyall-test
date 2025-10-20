@@ -1,6 +1,10 @@
 package shared
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/stretchr/testify/assert"
+)
 
 // Helper function that will be used across modules
 func FormatMessage(message string) string {
@@ -18,4 +22,11 @@ func NewResponse(status, message string) Response {
 		Status:  status,
 		Message: FormatMessage(message),
 	}
+}
+
+// ValidateResponse uses testify to validate response format
+func ValidateResponse(resp Response) bool {
+	assert.NotEmpty(nil, resp.Status, "Status should not be empty")
+	assert.NotEmpty(nil, resp.Message, "Message should not be empty")
+	return resp.Status != "" && resp.Message != ""
 }
