@@ -20,5 +20,6 @@
   "schedule": ["at any time"],
   "timezone": "UTC",
   "prHourlyLimit": 10,
-  "prConcurrentLimit": 5
+  "prConcurrentLimit": 5,
+  "branchPrefix": "renovate-test-"
 }
